@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" class="dark" id="appHtml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>DigiDukaan POS - Retail & Easyload Management</title>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#020617" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="DigiDukaan POS" />
+    <link rel="apple-touch-icon" href="https://images.unsplash.com/photo-1556742049-0a67923485d5?w=192&auto=format&fit=crop&q=80" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+      // Global error suppression for harmless Vite HMR WebSocket connection messages
+      window.addEventListener('error', function(event) {
+        if (event && event.message && (event.message.includes('WebSocket') || event.message.includes('vite') || event.message.includes('HMR'))) {
+          event.stopImmediatePropagation();
+          event.preventDefault();
+          return true;
+        }
+      }, true);
+
+      window.addEventListener('unhandledrejection', function(event) {
+        if (event && event.reason && (
+          (typeof event.reason === 'string' && (event.reason.includes('WebSocket') || event.reason.includes('vite'))) ||
+          (event.reason.message && (event.reason.message.includes('WebSocket') || event.reason.message.includes('vite')))
+        )) {
+          event.stopImmediatePropagation();
+          event.preventDefault();
+          return true;
+        }
+      }, true);
+    </script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased selection:bg-amber-500 selection:text-slate-950">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "DigiDukaan POS",
+  "description": "DigiDukaan Universal POS & Digital Ledger for shopkeepers and retail merchants. Manage Easyload, Money Transfers, Cash Registers, Biometric Security, AI Assistant, and Custom Shop Profiles.",
+  "requestFramePermissions": ["camera", "microphone", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

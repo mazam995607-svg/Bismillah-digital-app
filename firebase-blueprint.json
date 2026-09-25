@@ -1,0 +1,58 @@
+{
+  "entities": {
+    "users": {
+      "title": "Users",
+      "description": "User profiles and backup metadata",
+      "properties": {
+        "email": { "type": "string", "description": "User Email Address" },
+        "shopName": { "type": "string", "description": "Shop or Business Name" },
+        "lastBackupAt": { "type": "string", "description": "Timestamp of last auto backup" },
+        "cloudStorageQuotaMB": { "type": "number", "description": "Allocated cloud storage in MB" },
+        "usedStorageMB": { "type": "number", "description": "Used storage in MB" }
+      },
+      "required": ["email"]
+    },
+    "backups": {
+      "title": "Backups",
+      "description": "WhatsApp-style automatic cloud backups",
+      "properties": {
+        "userEmail": { "type": "string", "description": "User Email" },
+        "timestamp": { "type": "string", "description": "Backup timestamp ISO string" },
+        "backupData": { "type": "string", "description": "JSON stringified application state backup" },
+        "totalRecords": { "type": "number", "description": "Total records count" },
+        "backupSizeKB": { "type": "number", "description": "Backup size in KB" }
+      },
+      "required": ["userEmail", "timestamp", "backupData"]
+    },
+    "transactions": {
+      "title": "Transactions",
+      "description": "Real-time synced shop transactions",
+      "properties": {
+        "userEmail": { "type": "string", "description": "User Email" },
+        "txId": { "type": "string", "description": "Transaction unique ID" },
+        "type": { "type": "string", "description": "Transaction type" },
+        "amount": { "type": "number", "description": "Transaction amount" },
+        "number": { "type": "string", "description": "Phone or Account Number" },
+        "service": { "type": "string", "description": "Service name" },
+        "status": { "type": "string", "description": "Transaction status" },
+        "timestamp": { "type": "string", "description": "Date string" }
+      },
+      "required": ["userEmail", "txId", "amount"]
+    },
+    "app_updates": {
+      "title": "App Updates",
+      "description": "Over-The-Air app version updates, dynamic announcements and remote config",
+      "properties": {
+        "version": { "type": "string", "description": "App version e.g. v4.3.0" },
+        "title": { "type": "string", "description": "Release Title" },
+        "changelog": { "type": "string", "description": "Update notes" },
+        "publishedAt": { "type": "string", "description": "Publication ISO string" },
+        "publishedBy": { "type": "string", "description": "Admin author email" },
+        "isCritical": { "type": "boolean", "description": "Auto force-refresh on client devices" },
+        "announcement": { "type": "string", "description": "Global live broadcast banner" },
+        "featureFlags": { "type": "string", "description": "JSON stringified feature flags" }
+      },
+      "required": ["version", "title", "publishedAt"]
+    }
+  }
+}
